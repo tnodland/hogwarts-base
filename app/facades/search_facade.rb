@@ -11,7 +11,7 @@ class SearchFacade
 
   def find_students
     service = HogwartsService.new(@house)
-    students = service.get_students[:students]
+    students = service.get_students
     students.map do |student|
       Student.new(student)
     end
