@@ -1,3 +1,10 @@
 <h1>House <%= facade.house %></h1>
 
 <h2><%= facade.total_students %> Students</h2>
+
+<% facade.find_students.each do |student| %>
+  <section class='student'>
+    <p>Name: <%= student.name %></p>
+    <p>ID: <%= student.id %></p>
+  </section>
+<% end %>

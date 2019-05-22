@@ -9,7 +9,7 @@ RSpec.describe HogwartsService do
       return_value = service.get_students
 
       expect(return_value).to be_a(Hash)
-      expect(return_value[:data][:attributes][:name]).to eq(house)
+      expect(return_value[:name]).to eq(house.capitalize)
     end
   end
 end

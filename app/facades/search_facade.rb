@@ -6,10 +6,14 @@ class SearchFacade
   end
 
   def total_students
-    get_students.count
+    find_students.count
   end
 
   def find_students
     service = HogwartsService.new(@house)
+    students = service.get_students[:students]
+    students.map do |student|
+      Student.new(student)
+    end
   end
 end
